@@ -54,6 +54,7 @@ sudo mdutil -i off -a \
     && brew install --cask fork \
     && brew install --cask firefox-developer-edition \
     && brew install --cask maccy \
+    && brew install --cask pliim \
     && brew install asdf \
     && echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.zshrc \
     && brew install starship \
