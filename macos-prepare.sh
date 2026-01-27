@@ -4,7 +4,6 @@
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-
 # install xcode tools
 xcode-select --install || echo 'xcode tools are already installed';
 
@@ -50,20 +49,14 @@ sudo mdutil -i off -a \
     && brew install --cask spectacle \
     && brew install --cask boop \
     && brew install --cask bluesnooze \
-    && brew install --cask dash \
     && brew install --cask fork \
-    && brew install --cask firefox-developer-edition \
     && brew install --cask maccy \
-    && brew install --cask pliim \
-    && brew install asdf \
-    && echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ~/.zshrc \
-    && brew install starship \
+	&& brew install --cask colemak-dh \
+	&& brew install mise \
+    && brew install starship \	
     && echo -e 'eval "$(starship init zsh)"' >> ~/.zshrc \
     && echo '✅ brew and software installation' \
 	|| echo '❗️ brew and software installation failed'    
-
-# Download Alabaster Intellij IDEA color theme
-curl https://raw.githubusercontent.com/tonsky/intellij-alabaster/master/Alabaster.icls --output ~/Downloads/Alabaster.icls
 
 echo ''
 echo 'MacOS preparation is done'
