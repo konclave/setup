@@ -41,17 +41,16 @@ sudo mdutil -i off -a \
 
 # Install HomeBrew and software
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
-    && brew tap homebrew/cask-versions \
-    && brew tap homebrew/cask-fonts \
-    && brew install --cask font-fira-code \
-    && brew install --cask iterm2 \
-    && brew install --cask keepingyouawake \
-    && brew install --cask spectacle \
-    && brew install --cask boop \
-    && brew install --cask bluesnooze \
-    && brew install --cask fork \
-    && brew install --cask maccy \
-	&& brew install --cask colemak-dh \
+    && brew install font-fira-code \
+    && brew install iterm2 \
+#    && brew install keepingyouawake \
+#    && brew install spectacle \
+    && brew install only-switch \
+    && brew install boop \
+    && brew install bluesnooze \
+    && brew install fork \
+    && brew install maccy \
+	&& brew install colemak-dh \
 	&& brew install mise \
     && brew install starship \	
     && echo -e 'eval "$(starship init zsh)"' >> ~/.zshrc \
