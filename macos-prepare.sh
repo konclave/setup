@@ -44,7 +44,7 @@ sudo mdutil -i off -a \
     && brew install font-fira-code \
     && brew install iterm2 \
 #    && brew install keepingyouawake \
-#    && brew install spectacle \
+    && brew install --cask rectangle
     && brew install only-switch \
     && brew install boop \
     && brew install bluesnooze \
