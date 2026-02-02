@@ -51,7 +51,7 @@ sudo mdutil -i off -a \
     && brew install fork \
     && brew install maccy \
 	&& brew install colemak-dh \
-	&& brew install mise \
+	&& brew install mise && echo 'eval "$(/opt/homebrew/bin/mise activate zsh)"' >> ~/.zshrc \
     && brew install starship \	
     && echo -e 'eval "$(starship init zsh)"' >> ~/.zshrc \
     && echo '✅ brew and software installation' \
