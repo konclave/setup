@@ -65,6 +65,18 @@ sudo mdutil -i off -a \
     && brew install boop \
     && brew install bluesnooze \
     && brew install fork \
+	&& brew install finicky \
+	&& brew install calibre \
+	&& brew install orbstack \
+	&& brew install tailscale \
+	&& brew install syncthing \
+	&& brew install netnewswire \
+	&& brew install languagetool-desktop \
+	&& brew install bitwarden
+	&& brew install lunar \
+	&& brew install logseq \
+	&& brew install colemak-dh \
+	&& brew install shottr \
     && brew install maccy \
 	&& brew install colemak-dh \
 	&& brew install mise && echo 'eval "$(/opt/homebrew/bin/mise activate zsh)"' >> ~/.zshrc \
