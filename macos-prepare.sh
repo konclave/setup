@@ -69,7 +69,6 @@ sudo mdutil -i off -a \
 	&& brew install calibre \
 	&& brew install orbstack \
 	&& brew install tailscale \
-	&& brew install syncthing \
 	&& brew install netnewswire \
 	&& brew install languagetool-desktop \
 	&& brew install bitwarden
@@ -87,7 +86,7 @@ sudo mdutil -i off -a \
 
 # Install Syncthing
 brew install syncthing
-cat <<'EOF' > ~/Library/LaunchAgents/com.user.syncthing.plist && launchctl load ~/Library/LaunchAgents/com.user.syncthing.plist && echo '✅ syncthing' || echo '❗️ syncthing installation failed'
+cat <<'EOF' > ~/Library/LaunchAgents/com.user.syncthing.plist && launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.syncthing.plist && echo '✅ syncthing' || echo '❗️ syncthing installation failed'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
