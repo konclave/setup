@@ -85,5 +85,36 @@ sudo mdutil -i off -a \
     && echo '✅ brew and software installation' \
 	|| echo '❗️ brew and software installation failed'    
 
+# Install Syncthing
+brew install syncthing
+cat <<'EOF' > ~/Library/LaunchAgents/com.user.syncthing.plist && launchctl load ~/Library/LaunchAgents/com.user.syncthing.plist && echo '✅ syncthing' || echo '❗️ syncthing installation failed'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Syncthing</key>
+    <string>com.user.syncthing</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/syncthing</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/syncthing.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/syncthing.err.log</string>
+</dict>
+</plist>
+EOF
+
+
 echo ''
 echo 'MacOS preparation is done'
