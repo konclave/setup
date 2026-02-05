@@ -92,7 +92,7 @@ cat <<'EOF' > ~/Library/LaunchAgents/com.user.syncthing.plist && launchctl load 
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Syncthing</key>
+    <key>Label</key>
     <string>com.user.syncthing</string>
 
     <key>ProgramArguments</key>
