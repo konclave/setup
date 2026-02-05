@@ -73,7 +73,6 @@ sudo mdutil -i off -a \
 	&& brew install languagetool-desktop \
 	&& brew install bitwarden
 	&& brew install lunar \
-	&& brew install logseq \
 	&& brew install colemak-dh \
 	&& brew install shottr \
     && brew install maccy \
@@ -82,11 +81,18 @@ sudo mdutil -i off -a \
     && brew install starship \	
     && echo -e 'eval "$(starship init zsh)"' >> ~/.zshrc \
     && echo '✅ brew and software installation' \
-	|| echo '❗️ brew and software installation failed'    
+	|| echo '❗️ brew and software installation failed'
+
+# Install logseq
+brew install logseq && cat << EOF > "$HOME/Library/Application Support/Logseq/config.json"
+{
+  "lastOpenedGraph": "$HOME/Sync/logseq"
+}
+EOF
 
 # Install Syncthing
 brew install syncthing
-cat <<'EOF' > ~/Library/LaunchAgents/com.user.syncthing.plist && launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.user.syncthing.plist && echo '✅ syncthing' || echo '❗️ syncthing installation failed'
+cat <<'EOF' > "$HOME/Library/LaunchAgents/com.user.syncthing.plist" && launchctl bootstrap gui/$(id -u) "$HOME/Library/LaunchAgents/com.user.syncthing.plist" && echo '✅ syncthing' || echo '❗️ syncthing installation failed'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
