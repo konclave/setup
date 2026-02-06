@@ -59,39 +59,42 @@ sudo mdutil -i off -a \
 
 # Install HomeBrew and software
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
-    && brew install font-fira-code \
-    && brew install iterm2 \
-    && brew install only-switch \
-    && brew install boop \
-    && brew install bluesnooze \
-    && brew install fork \
-	&& brew install finicky \
-	&& brew install calibre \
-	&& brew install orbstack \
-	&& brew install tailscale \
-	&& brew install netnewswire \
-	&& brew install languagetool-desktop \
-	&& brew install bitwarden
-	&& brew install lunar \
-	&& brew install colemak-dh \
-	&& brew install shottr \
-    && brew install maccy \
-	&& brew install colemak-dh \
-	&& brew install mise && echo 'eval "$(/opt/homebrew/bin/mise activate zsh)"' >> ~/.zshrc \
-    && brew install starship \	
-    && echo -e 'eval "$(starship init zsh)"' >> ~/.zshrc \
-    && echo '✅ brew and software installation' \
-	|| echo '❗️ brew and software installation failed'
+  && brew install font-fira-code \
+  iterm2 \
+  only-switch \
+  boop \
+  bluesnooze \
+  fork \
+  finicky \
+  calibre \
+  orbstack \
+  tailscale tailscale-app \
+  netnewswire \
+  languagetool-desktop \
+  bitwarden
+  lunar \
+  colemak-dh \
+  shottr \
+  maccy \
+  && echo '✅ brew and software installation' \
+  || echo '❗️ brew and software installation failed'
+  
+brew install mise && echo 'eval "$(/opt/homebrew/bin/mise activate zsh)"' >> ~/.zshrc
+  && echo '✅ mise installed' \
+  || echo '❗️ mise installation failed'
+  
+brew install starship \	
+  && echo -e 'eval "$(starship init zsh)"' >> ~/.zshrc \
+  && echo '✅ starship installed' \
+  || echo '❗️ starship installation failed'  
 
-# Install logseq
 brew install logseq && cat << EOF > "$HOME/Library/Application Support/Logseq/config.json"
 {
   "lastOpenedGraph": "$HOME/Sync/logseq"
 }
 EOF
 
-# Install Syncthing
-brew install syncthing
+brew install syncthing && \
 cat <<'EOF' > "$HOME/Library/LaunchAgents/com.user.syncthing.plist" && launchctl bootstrap gui/$(id -u) "$HOME/Library/LaunchAgents/com.user.syncthing.plist" && echo '✅ syncthing' || echo '❗️ syncthing installation failed'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -119,7 +122,6 @@ cat <<'EOF' > "$HOME/Library/LaunchAgents/com.user.syncthing.plist" && launchctl
 </dict>
 </plist>
 EOF
-
 
 echo ''
 echo 'MacOS preparation is done'
